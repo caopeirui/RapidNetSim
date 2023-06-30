@@ -1,0 +1,16 @@
+
+*.pyc
+*__pycache__
+*~
+*.1
+*.xcodeproj
+*.xcworkspace
+*.vscode
+doc/html
+doc/latex
+*nohup.out
+*exp.ini
+*.log
+*.txt
+**/.idea/
+*.ini

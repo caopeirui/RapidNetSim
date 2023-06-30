@@ -1,0 +1,70 @@
+[Parameter]  # Do not modify
+seed = {{ seed | default(10) }}
+
+# The sequence number of NICs is [0, 1, ..., 2047]
+NIC_num = {{ NIC_num }}
+NIC_num_in_a_server = {{ NIC_num_in_a_server }}
+
+
+# The global id of leaf switches is [2048, ..., 2111] 
+leaf_switch_num = {{ leaf_switch_num }}
+
+leaf_switch_port_num = {{ leaf_switch_port_num }}
+spine_switch_port_num = {{ spine_switch_port_num }}
+
+# The global id of spine switches is [2112, ..., 2143]
+spine_switch_num = {{ spine_switch_num }}
+
+
+inner_server_bandwidth = {{ inner_server_bandwidth }}
+# 100Gbps = 100 * 1024 * 1024 * 1024 bit / 1000000000 ns ~= 100 bit / ns
+switch_port_bandwidth = {{ switch_port_bandwidth }}
+
+computation_time = {{ computation_time }}
+
+joint_scheduler = {{ joint_scheduler }}
+
+downlinks = {{ downlinks }}
+
+measure_sampling_interval = {{ measure_sampling_interval }}
+
+find_path_method = {{ find_path_method }}
+
+find_next_hop_method = {{ find_next_hop_method }}
+
+greedy = {{ greedy }}
+
+bandwidth_allocation = {{ bandwidth_allocation }}
+
+TCP_type = {{ TCP_type }}
+
+core_run_type = {{ core_run_type }}
+
+time_tick = {{ time_tick }}
+
+reconfiguration = {{ reconfiguration }}
+
+network_transmission_delay = {{ network_transmission_delay }}
+inserver_transmission_delay = {{ inserver_transmission_delay }}
+
+non_overlap_ratio = {{ non_overlap_ratio }}
+
+[Topology]   # Do not modify
+topo_type = {{ topo_type }}
+
+# The ID of NIC starts from 0.
+# The ID of switch starts from the maximum NIC ID + 1.
+# (src_id, dst_id, link_num)
+connect_info_list = {{ connect_info_str }}
+
+[Task]
+task_type = {{ task_type }}
+
+task_iteration_num = {{task_iteration_num}}
+
+waiting_task_order_mode = {{ waiting_task_order_mode }}
+
+# [(arriving_time, model_size (Gbit) at every NIC, task_occupied_NIC_num), ...]. Note that order by arriving_time.
+task_list = {{ task_list }}
+
+flow_arrivals_list = {{ flow_arrivals_list }}
